@@ -109,4 +109,4 @@ def generate_itineraries(period, characters, transition_graph, first_letter = No
 
 
 itineraries = generate_itineraries(7, characters=characters_actual, transition_graph=transition_actual)
-print(itineraries)
+print(len(itineraries))
