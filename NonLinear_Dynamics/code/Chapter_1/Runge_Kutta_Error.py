@@ -69,9 +69,7 @@ f_prime_x_t = sp.diff(f, x).subs(x, x_of_t)
 f_x_t = f.subs(x, x_of_t)
 f_double_prime_x_t = sp.diff(f,x, 2).subs(x, x_of_t)
 
-x_quad_prime = sp.diff(f_prime_x_t**2 * f_x_t + f_double_prime_x_t * f_x_t**2)
-x_quad_prime = x_quad_prime.subs(sp.diff(x_of_t, t), f.subs(x, x_0))
-x_quad_prime = x_quad_prime.subs(x_of_t, x_0)
+x_quad_prime = sp.diff(f_prime_x_t**2 * f_x_t + f_double_prime_x_t * f_x_t**2).subs(sp.diff(x_of_t, t), f.subs(x, x_0)).subs(x_of_t, x_0)
 
 print("\n\n Derivatives of x(t)")
 print(f"x(t) = {sp.latex(x_0)}")
